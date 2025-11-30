@@ -1,0 +1,2 @@
+# Module 2 - Sierpinski Gasket and Shaders
+This module exemined the use of base graphical components for a computing system by examining a Sierpinski Gasket that was rendered with vertex and fragment shaders.
