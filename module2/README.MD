@@ -6,7 +6,7 @@ This module exemined the use of base graphical components for a computing system
 ![Screenshot of issue.](image.png)
 - **Commit 59c7b9f04bce4290f5adcb1840c9ea3e9a40111e** - Addition of illustrations that showcase where the frame is supposed to be on the page.
 ![alt text](image-1.png)
-- **Commit a** - Utilized Copilot to help with issues that lead too a CORS permissions issues for scripting with the WebGL script.
+- **Commit f6ba5a026053f88e677fd4b88befc80ffe405d5e** - Utilized Copilot to help with issues that lead too a CORS permissions issues for scripting with the WebGL script.
 ![alt text](image-2.png)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
