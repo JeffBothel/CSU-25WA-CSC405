@@ -3,7 +3,7 @@ console.log("Script loaded");
 // Initiatlizing WebGL variables that are indicated in the example script and placed in the global space in that example
 // https://www.interactivecomputergraphics.com/Code/02/gasket1.js is example reference.
 var positions = [];
-var numPositions = 5000;
+var numPositions = 500;
 // Example provided a var for gl that I am choosing my implementation to leave in main().
 
 // Wait for DOM to load before initializing WebGL
