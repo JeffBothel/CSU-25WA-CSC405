@@ -26,8 +26,8 @@ function main() {
     }
 
     console.log("Setting clear color and clearing canvas");
-    // Set clear color to black, fully opaque
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    // Set clear color to dark red, fully opaque
+    gl.clearColor(0.5, 0.0, 0.0, 1.0);
     // Clear the color buffer with specified clear color
     gl.clear(gl.COLOR_BUFFER_BIT);
     

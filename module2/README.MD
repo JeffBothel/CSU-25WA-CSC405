@@ -11,6 +11,9 @@ This module exemined the use of base graphical components for a computing system
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+- **Commit 1** - Figured out a workaround that creates a local server instance that will run and provide the page from the Live Server extension in VS Code. Made a change to the [webgl-demo.js](webgl-demo.js) file that does show changes to the color of the box on rendered on the screen to confirm.
+![alt text](image-6.png)
+![alt text](image-7.png)
 
 ## References Utilized
 [Mozilla Developer Reference from Course Material Recommendations](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial) - Utilized to create the initial set up of the WebGL environment for programming.
