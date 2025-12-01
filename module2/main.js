@@ -1,7 +1,7 @@
 console.log("main.js loaded for the web page.");
 
 // Global variables for configurations
-var NumTimesToSubdivide = 5; // Number of times to subdivide the triangle
+var NumTimesToSubdivide = 3; // Number of times to subdivide the triangle
 var positions = []; // Array to hold vertex positions
 
 // Main function to initialize WebGL and set up the canvas
@@ -21,6 +21,7 @@ window.onload = function main() {
     gl.clearColor(1.0, 1.0, 1.0, 1.0);
 
     // Setting up the different triangle components
+    console.log("Setting up triangle vertices.");
     var verticies = [
         vec2(-1, -1),
         vec2(0, 1),
@@ -30,23 +31,24 @@ window.onload = function main() {
     // Start the recursive division of the triangle
     divideTriangle(verticies[0], verticies[1], verticies[2], NumTimesToSubdivide);
 
+    // Start the shaders for the WebGL output
+    console.log("Initializing shaders.");
     var program = initShaders(gl, "vertex-shader", "fragment-shader");
     gl.useProgram(program);
 
     // Load the data into the GPU
-
+    console.log("Loading data into GPU for buffering.");
     var bufferId = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, bufferId );
     gl.bufferData(gl.ARRAY_BUFFER, flatten(positions), gl.STATIC_DRAW);
 
     // Associate out shader variables with our data buffer
-
     var positionLoc = gl.getAttribLocation(program, "aPosition");
     gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(positionLoc);
 
     // Render the triangles
-    gl.clear(gl.COLOR_BUFFER_BIT);
+    console.log("Rendering triangles.");
     gl.drawArrays(gl.TRIANGLES, 0, positions.length);
 };
 

@@ -22,6 +22,7 @@ https://www.interactivecomputergraphics.com/Code/Common/
 - **Commit c0d4cd1621d35d4905dad5794365b72b630ee77e** - Utilized GitHub Copilot to analyze the code I assembled and determined that I was making incorrect version references in the functions for getting canvas information. I needed to correct that to WebGL2 referencing instead. 
 ![alt text](image-10.png)
 ![alt text](image-11.png)
+- **Commit 1** - Made minor changes towards readying the program for report writing from the critical thinking exercise. Additionally made a couple cosmetic and logging adjustments for greater verbose logging and better display of the WebGL components.
 
 ## References Utilized
 - [Mozilla Developer Reference from Course Material Recommendations](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial) - Utilized to create the initial set up of the WebGL environment for programming.
