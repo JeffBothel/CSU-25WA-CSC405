@@ -14,6 +14,9 @@ This module exemined the use of base graphical components for a computing system
 - **Commit eacecb7db9decff20bcdf5c6ed776675f2451aee** - Figured out a workaround that creates a local server instance that will run and provide the page from the [Live Server extension in VS Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). Made a change to the [webgl-demo.js](webgl-demo.js) file that does show changes to the color of the box on rendered on the screen to confirm.
 ![alt text](image-6.png)
 ![alt text](image-7.png)
+- **Commit 1** - I was getting errors for various functions missing. I worked on pulling together the common resources from the provided example files `Common` folder that is now in the repo root as a new `Common` folder.
+https://www.interactivecomputergraphics.com/Code/Common/
 
 ## References Utilized
-[Mozilla Developer Reference from Course Material Recommendations](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial) - Utilized to create the initial set up of the WebGL environment for programming.
+- [Mozilla Developer Reference from Course Material Recommendations](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial) - Utilized to create the initial set up of the WebGL environment for programming.
+- [Textbook Code Examples](https://www.interactivecomputergraphics.com/Code/02/gasket1.js) - Code examples that are provided with the course textbook.
