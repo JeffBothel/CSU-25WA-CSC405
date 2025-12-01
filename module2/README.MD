@@ -17,7 +17,8 @@ This module exemined the use of base graphical components for a computing system
 - **Commit 04bdceb1150e153bf1be22da81059faa3222be9b** - I was getting errors for various functions missing. I worked on pulling together the common resources from the provided example files `Common` folder that is now in the repo root as a new `Common` folder. This was to match the scripts that appear to be present in [gasket1.html](https://www.interactivecomputergraphics.com/Code/02/gasket1.html) from the example.
 https://www.interactivecomputergraphics.com/Code/Common/
 ![alt text](image-8.png)
-- **Commit 05f3968a2f72da2eaa6b6ea4a74ab773cf62f22b** - Created various code elements to load the Sierpinski Gasket based on the code provided in the book materials. Comments added from where the code elements were provided from that source.
+- **Commit 05f3968a2f72da2eaa6b6ea4a74ab773cf62f22b** - Created various code elements to load the Sierpinski Gasket based on the code provided in the book materials. Comments added from where the code elements were provided from that source. Now I am getting an error related to the vertex shader being an incompatible version.
+![alt text](image-9.png)
 
 ## References Utilized
 - [Mozilla Developer Reference from Course Material Recommendations](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial) - Utilized to create the initial set up of the WebGL environment for programming.
