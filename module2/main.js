@@ -10,9 +10,10 @@ window.onload = function main() {
     
     // Loading the WebGL canvas
     const canvas = this.document.querySelector("#gl-canvas") ?? console.log("Canvas element not found.");
-    const gl = canvas.getContext("webgl") ?? console.log("WebGL not enabled for browser.")
+    const gl = canvas.getContext("webgl2") ?? console.log("WebGL2 not enabled for browser.")
     if(!canvas || !gl) {
         console.log("Exiting main function due to inablility to render WebGL information.");
+        return;
     }
     
     // Preparing the canvas for rendering
@@ -43,6 +44,10 @@ window.onload = function main() {
     var positionLoc = gl.getAttribLocation(program, "aPosition");
     gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(positionLoc);
+
+    // Render the triangles
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.TRIANGLES, 0, positions.length);
 };
 
 // Referencing the equivalent function from https://www.interactivecomputergraphics.com/Code/02/gasket2.js
