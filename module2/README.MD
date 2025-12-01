@@ -19,7 +19,7 @@ https://www.interactivecomputergraphics.com/Code/Common/
 ![alt text](image-8.png)
 - **Commit 05f3968a2f72da2eaa6b6ea4a74ab773cf62f22b** - Created various code elements to load the Sierpinski Gasket based on the code provided in the book materials. Comments added from where the code elements were provided from that source. Now I am getting an error related to the vertex shader being an incompatible version.
 ![alt text](image-9.png)
-- **Commit 1** - Utilized GitHub Copilot to analyze the code I assembled and determined that I was making incorrect version references in the functions for getting canvas information. I needed to correct that to WebGL2 referencing instead. 
+- **Commit c0d4cd1621d35d4905dad5794365b72b630ee77e** - Utilized GitHub Copilot to analyze the code I assembled and determined that I was making incorrect version references in the functions for getting canvas information. I needed to correct that to WebGL2 referencing instead. 
 ![alt text](image-10.png)
 ![alt text](image-11.png)
 
