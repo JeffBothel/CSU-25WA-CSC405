@@ -2,10 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>WebGL Demo</title>
-    <script src="../Common/WebGL/initShaders.js"></script>
+    <title>Module 2 - Sierpinski Gasket</title>
+    <!-- Provided from https://www.interactivecomputergraphics.com/Code/02/gasket2.html for shading components -->
+    <script id="vertex-shader" type="x-shader/x-vertex">
+      #version 300 es
+      in vec4 aPosition;
+
+      void
+      main()
+      {
+          gl_Position = aPosition;
+      }
+    </script>
+    <script id="fragment-shader" type="x-shader/x-fragment">
+      #version 300 es
+      precision mediump float;
+
+      out vec4 fColor;
+
+      void
+      main()
+      {
+          fColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+      }
+    </script>
+    <!-- Provided from https://www.interactivecomputergraphics.com/Code/Common/MVnew.js and loaded locally for testing and running during exercises.-->
     <script src="../Common/WebGL/MVnew.js"></script>
-    <script src="webgl-demo.js" type="module"></script>
+    <!-- Provided from https://www.interactivecomputergraphics.com/Code/Common/initShaders.js and loaded locally for testing and running during exercises.-->
+    <script src="../Common/WebGL/initShaders.js"></script>
+    <script src="main.js" type="module"></script>
   </head>
 
   <body>
