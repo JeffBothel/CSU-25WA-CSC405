@@ -1,0 +1,72 @@
+<!-- This source originated from course materials at https://www.interactivecomputergraphics.com/Code/06/ -->
+<!-- Source code utilized here is included from the course materials -->
+<!-- Angel, E., & Shreiner, D. (2020). Interactive Computer Graphics (8th ed.). Pearson Education, Inc. https://www.pearson.com/store/en-us/pearsonplus/p/9780135217160.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ***Jeff: Moving the script info up, adding header, and setting a page title.-->
+    <meta charset="utf-8" />
+    <title>CSC405 - Module 6 - Critical Thinking - Wireframe Work</title>
+    <script src="../Common/WebGL/webgl-2.0.1.min.js"></script>
+    <script type="text/javascript" src="../Common/WebGL/initShaders.js"></script>
+    <script type="text/javascript" src="../Common/WebGL/MVnew.js"></script>
+    <script type="text/javascript" src="timeInfo.js"></script> <!-- ***Jeff: Added this script to the page to show the date and time for screenshots. -->
+    <script type="text/javascript" src="wireSphere.js"></script>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        #version 300 es
+
+        in vec4 aPosition;
+
+        uniform mat4 uModelViewMatrix;
+        uniform mat4 uProjectionMatrix;
+
+
+        void
+        main()
+        {
+            gl_Position = uProjectionMatrix*uModelViewMatrix*aPosition;
+        }
+    </script>
+    <script id="fragment-shader" type="x-shader/x-fragment">
+        #version 300 es
+
+        precision mediump float;
+
+        out vec4 fColor;
+
+        void
+        main()
+        {
+            fColor = vec4(0.0, 0.0, 0.0, 1.0);
+        }
+    </script>
+    <style>
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .input {
+                padding: 20px;
+                text-align: center;
+                border-radius: 5px;
+            }
+        </style>
+    
+</head>
+<body>
+    <!-- ***Jeff: Adjusted the body to provide the sliders and structure the sliders for the WebGL rendering-->
+    <h1>CSC405 - Module 6 - Critical Thinking - Wireframe Work</h1>
+    <!-- ***Jeff: Adding in the date and time display for screenshots in assignment-->
+    <div id="datetime"></div>
+    <div>
+        <canvas id="gl-canvas" width="800" height="800">
+            Oops ... your browser doesn't support the HTML5 canvas element
+        </canvas>
+    </div>
+    <div class="container">
+        <input id="thetaSlider" type="range" min="0" max="360" value="0" step="1">Theta</input>
+        <input id="phiSlider" type="range" min="0" max="360" value="0" step="1">Phi</input>
+        <input id="SubdivisionsSlider" type="range" min="0" max="6" value="3" step="1">Subdivisions</input>
+    </div>
+</body>
+</html>

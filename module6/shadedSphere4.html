@@ -1,0 +1,100 @@
+<!-- This source originated from course materials at https://www.interactivecomputergraphics.com/Code/06/ -->
+<!-- Source code utilized here is included from the course materials -->
+<!-- Angel, E., & Shreiner, D. (2020). Interactive Computer Graphics (8th ed.). Pearson Education, Inc. https://www.pearson.com/store/en-us/pearsonplus/p/9780135217160.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSC405 - Module 6 - Critical Thinking - Shaded Sphere</title>
+        <script type="text/javascript" src="../Common/WebGL/initShaders.js"></script>
+        <script type="text/javascript" src="../Common/WebGL/MVnew.js"></script>
+        <script type="text/javascript" src="shadedSphere4.js"></script>
+        <script type="text/javascript" src="timeInfo.js"></script> <!-- ***Jeff: Added this script to the page to show the date and time for screenshots. -->
+        <script id="vertex-shader" type="x-shader/x-vertex">
+            #version 300 es
+
+            in vec4 aPosition;
+            in vec4 aNormal;
+            out vec3 N, L, E;
+
+            uniform mat4 uModelViewMatrix;
+            uniform mat4 uProjectionMatrix;
+            uniform vec4 uLightPosition;
+            uniform mat3 uNormalMatrix;
+
+            void main()
+            {
+                vec3 light;
+                vec3 pos = (uModelViewMatrix * aPosition).xyz;
+                if(uLightPosition.z == 0.0)  L = normalize(uLightPosition.xyz);
+                else  L = normalize(uLightPosition).xyz - pos;
+
+                E =  -normalize(pos);
+                N = normalize(uNormalMatrix*aNormal.xyz);
+                gl_Position = uProjectionMatrix * uModelViewMatrix * aPosition;
+
+            }
+        </script>
+        <script id="fragment-shader" type="x-shader/x-fragment">
+            #version 300 es
+
+            precision mediump float;
+
+            uniform vec4 uAmbientProduct;
+            uniform vec4 uDiffuseProduct;
+            uniform vec4 uSpecularProduct;
+            uniform float uShininess;
+
+            in vec3 N, L, E;
+            out vec4 fColor;
+
+            void main()
+            {
+
+                vec3 H = normalize( L + E );
+                vec4 ambient = uAmbientProduct;
+
+                float Kd = max( dot(L, N), 0.0 );
+                vec4  diffuse = Kd*uDiffuseProduct;
+
+                float Ks = pow( max(dot(N, H), 0.0), uShininess );
+                vec4  specular = Ks * uSpecularProduct;
+
+                if( dot(L, N) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
+
+                fColor = ambient + diffuse +specular;
+                fColor.a = 1.0;
+
+            }
+        </script>
+        <style>
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+            .input {
+                padding: 20px;
+                text-align: center;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+<body>
+    <!-- ***Jeff: Adjusted the body to provide the sliders and structure the sliders for the WebGL rendering-->
+    <h1>CSC405 - Module 6 - Critical Thinking - Shaded Sphere</h1>
+    <!-- ***Jeff: Adding in the date and time display for screenshots in assignment-->
+    <div id="datetime"></div>
+    <div>
+        <canvas id="gl-canvas" width="512" height="512">
+            Oops ... your browser doesn't support the HTML5 canvas element
+        </canvas>
+    </div>
+    <div class="container">
+        <!-- ***Jeff: Converted to sliders to allow visual adjustment of parameters easier to display -->
+        <h2>Adjust Sphere Parameters</h2>
+        <input id="radiusSlider" type="range" min="0.5" max="2.0" value="1.0" step="0.1">Radius</input>
+        <input id="thetaSlider" type="range" min="0" max="360" value="0" step="1">Theta</input>
+        <input id="phiSlider" type="range" min="0" max="360" value="0" step="1">Phi</input>
+        <input id="subdivisionsSlider" type="range" min="0" max="6" value="3" step="1">Subdivisions</input>
+    </div>
+</body>
+</html>
