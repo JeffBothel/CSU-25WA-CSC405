@@ -148,6 +148,7 @@ window.onload = function init() {
     projectionMatrixLoc = gl.getUniformLocation(program, "uProjectionMatrix");
     nMatrixLoc = gl.getUniformLocation(program, "uNormalMatrix");
 
+    // ***Jeff: Action code generated for sliders to adjust sphere parameters
     document.getElementById("radiusSlider").oninput = function(event){
         radius = event.target.value;
     };
